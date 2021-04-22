@@ -19,6 +19,7 @@ jsPsych.plugins['comprehension-test-2'] = (function() {
 	  //trial.audio = trial.audio || "stims/bleep.wav";
 	  trial.label = trial.label || "kita";
 	  trial.question = trial.question || "Click on the ";
+	  trial.question2 = trial.question2 || "";
 	  trial.timing_post_trial = typeof trial.timing_post_trial == 'undefined' ? 500 : trial.timing_post_trial;
 	  
 	  
@@ -32,14 +33,14 @@ jsPsych.plugins['comprehension-test-2'] = (function() {
 
       var paper = Snap("#jspsych-test-canvas");
 	  
-	  var circle1 = paper.circle(175, 325, 90);
+	  var circle1 = paper.circle(175, 200, 90);
 	  circle1.attr({
 		  fill: "#FFD3D6",
 		  stroke: "#000",
 		  strokeWidth: 5
 	  });
 	  
-	  var circle2 = paper.circle(675, 325, 90);
+	  var circle2 = paper.circle(675, 200, 90);
 	  circle2.attr({
 		  fill: "#FFD3D6",
 		  stroke: "#000",
@@ -48,8 +49,8 @@ jsPsych.plugins['comprehension-test-2'] = (function() {
 
 	  
 	  var imageLocations = {
-		  pos1: [100, 250],
-		  pos2: [600, 250]
+		  pos1: [100, 125],
+		  pos2: [600, 125]
 	  };
 	  
 	  var image1 = paper.image(trial.image1, imageLocations["pos1"][0], imageLocations["pos1"][1], trial.image_size[0],trial.image_size[1]);
@@ -58,18 +59,18 @@ jsPsych.plugins['comprehension-test-2'] = (function() {
 	  
 	  //add prompt text
 	  //display_element.append(trial.question + trial.label + "?");
-	  var text = paper.text(425, 50, trial.question + trial.label + ".");
-	  var labelText = paper.text(425, 150, trial.label);
+	  var text = paper.text(425, 50, trial.question);
+	  var text2 = paper.text(425, 90, trial.question2);
 	  text.attr({
 		  "text-anchor": "middle",
 		  editable: true,
-		  "font-weight": "bold"
+		  "font-size": "20px"
 	  });
-	  labelText.attr({
+	  text2.attr({
 		  "text-anchor": "middle",
 		  editable: true,
 		  "font-weight": "bold",
-		  "font-size": "25px"
+		  "font-size": "20px"
 	  });
 	  //create audio
 	  //var audio = new Audio(trial.audio);

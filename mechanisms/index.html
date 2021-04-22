@@ -61,6 +61,23 @@ var me_test = {
 
 timeline.push(me_test);
 
+var me_instructions = {
+	type: 'instructions',
+	size: 400,
+	pages: [
+		'If you thought that the alien on the right is the noopy, you were right!'+"<br>"
+		+'<p style="text-align:center;"><img src="stims/me_cues.jpeg" alt="social cues" width="70%"></p>'
+		+"We already knew the name for the animal on the right - it's a penguin, of course! But we didn't know the name for the alien - so the new word must be the name of the new alien."
+		+"<br>"
+        +'Babies can use this kind of reasoning to guess the meaning of new words. We call this strategy <b style="font-size:20px">'+"mutual exclusivity" +'</b>, since you exclude one of the options.'
+		+'<br><br>'
+		+'Click NEXT to learn about another way that babies can learn new words.'
+        ],
+	show_clickable_nav: true
+};
+
+timeline.push(me_instructions);
+
 // SOCIAL CUE TRIALS
 
 var soc_test = {
@@ -100,7 +117,7 @@ var stat_instructions = {
 	type: 'instructions',
 	size: 400,
 	pages: [
-		'The next strategy babies can use is by paying attention to how different words and objects. go together. This means that babies need to <b>track statistics</b> between words and what people are talking about.'+"<br><br>"
+		'The next strategy babies can use is to pay attention to how different words and objects go together. This means that babies <b>track statistics</b> between words and what people are talking about.'+"<br><br>"
         +'For this next part, you will see different aliens appearing with different words. See if you can figure out the names of the different aliens. <b> Make sure your audio is turned on before starting.</b> <br><br>'
 		+'Click NEXT to start learning!'
         ],
@@ -194,31 +211,38 @@ trainingList.push(trial);
 
 var testList=[];
 
-var test_prompt = {
-	type: 'comprehension-test-prompt-2',
-	image1: "stims/2.png",
-	image2: "stims/3.png",
-	label: "guffi",
-	targetLocation: 1,
-	targetImage: "stims/3.png",
-	choices: ['START']
-};
-
 var test = {
 	type: 'comprehension-test-2',
 	image1: "stims/2.png",
 	image2: "stims/3.png",
 	label: "guffi",
 	targetLocation: 1,
+	question: "Let's see what you learned!",
+	question2: "Which of the two objects is the guffi? Click on the guffi.",
 	targetImage: "stims/3.png"
 };
 
-testList.push(test_prompt);
 testList.push(test);
 	
 var crossit_trials=trainingList.concat(testList);
 
 var timeline=timeline.concat(crossit_trials);
+
+var stat_instructions_2 = {
+	type: 'instructions',
+	size: 400,
+	pages: [
+		'If you thought that the alien on the right is the guffi, you guessed right!'+"<br>"
+		+'<p style="text-align:center;"><img src="stims/stat_cues.jpeg" alt="social cues" width="70%"></p>'
+		+"The cone-shaped alien always appeared together with the word guffi - so it's a pretty good guess that guffi is the name of this alien. "
+        +'Babies also track these kinds of <b style="font-size:20px">'+"statistical cues" +'</b> to figure out what new words mean.'
+		+'<br><br>'
+		+'Click NEXT for a summary of what you learned!'
+        ],
+	show_clickable_nav: true
+};
+
+timeline.push(stat_instructions_2);
 
 
 //debrief and code message
@@ -227,14 +251,12 @@ var final_instructions = {
 	type: 'instructions',
 	size: 400,
 	pages: [
-		'Great job! You learned a few different strategies that babies use to learn new words:'
-        +"<br>"+"<br>"
+		'Great job! You learned three different strategies that help babies become word experts:'
 		+'<ol>'
-        +'<li><center><u><b style="font-size:20px">'+"mutual exclusivity" +'</b></u></center></li>'
-        +'<li><center><u><b style="font-size:20px">'+"social cues" +'</b></u></center></li>'
-        +'<li><center><u><b style="font-size:20px">'+"tracking statistics" +'</b></u></center></li>'
+        +'<li><b style="font-size:20px">'+"mutual exclusivity" +'</b></li>'
+        +'<li><b style="font-size:20px">'+"social cues" +'</b></li>'
+        +'<li><b style="font-size:20px">'+"tracking statistics" +'</b></li>'
 		+'</ol>'
-        +"<br>"
         +'<center>Email us if you have any questions or would like to know more about how babies learn words:</center>'
 		+'<center>martincz@princeton.edu</center>'
 		+'<p style="text-align:center;"><img src="stims/dogeword.jpeg" alt="doge word" width="50%"></p>'
@@ -255,7 +277,7 @@ experimentFinal.push(final_instructions);
 
  
 //preload all images
-var imageSet = ["stims/woman_me.jpeg","stims/soc_cues.jpeg","stims/penguin.png","stims/dogeword.jpeg","stims/penguin_word.jpeg","stims/2.png","stims/3.png","stims/6.png","stims/5.png","stims/7.png","stims/10.png","stims/12.png"];
+var imageSet = ["stims/woman_me.jpeg","stims/soc_cues.jpeg","stims/penguin.png","stims/dogeword.jpeg","stims/penguin_word.jpeg","stims/2.png","stims/3.png","stims/6.png","stims/5.png","stims/7.png","stims/10.png","stims/12.png","stims/eyes_down_left.jpeg","stims/me_cues.jpeg","stims/stat_cues.jpeg"];
 
 //preload audio (if audio gets added at some later point)  
 var allAudio = [];
