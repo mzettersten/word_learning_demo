@@ -36,7 +36,7 @@
 var trial = {
 type: 'instructions',
 pages: [
-  'Welcome! This website will show you some of the <b>strategies babies use to learn new words</b>. <p style="text-align:center;"><img width="60%" display="block" margin-left="auto" margin-right="auto" src="stims/penguin_word.jpeg"></p><img width="300" height="200" align="right" display="block" margin-left="auto" margin-right="auto" src="stims/baby_computer.jpg">Babies learn thousands of words over their first few years of life. On average, they are learning multiple words per day! How do they do it? <br><br>There is probably not one single answer to this question. Babies use <u>many</u> different strategies and types of information to learn about word meanings. <br><br> In the next few pages, <b>we will show you three word learning strategies</b>. For each strategy, you will have a chance to guess new word meanings - can you learn as well as a baby? <br><br>It will take about 3-5 minutes to click through the examples. Click NEXT to get started!',
+  'Welcome! This website will show you some of the <b>strategies babies use to learn new words</b>. <br><br><img width="300" height="200" align="right" display="block" margin-left="auto" margin-right="auto" src="stims/baby_computer.jpg">Babies learn thousands of words over their first few years of life. On average, they are learning multiple words per day! How do they do it? <br><br>There is probably not one single answer to this question. Babies use many different strategies and types of information to learn about word meanings. <br><br> In the next few pages, <b>we will show you three word learning strategies</b>. For each strategy, you will have a chance to guess new word meanings - can you learn as well as a baby? <br><br>It will take about 3-5 minutes to click through the examples. Click NEXT to get started!',
 ],
 show_clickable_nav: true
 }
@@ -69,7 +69,7 @@ var me_instructions = {
 		+'<p style="text-align:center;"><img src="stims/me_cues.jpeg" alt="social cues" width="70%"></p>'
 		+"We already knew the name for the animal on the left - it's a penguin, of course! But we didn't know the name for the alien - so the new word must be the name of the new alien."
 		+"<br>"
-        +'Babies can use this kind of reasoning to guess the meaning of new words. We call this strategy <b style="font-size:20px">'+"mutual exclusivity" +'</b>, since you exclude one of the options.'
+        +'Babies can use this kind of reasoning to guess the meaning of new words: they learn new words by  <b style="font-size:20px">'+"ruling out words they already know" +'</b>.'
 		+'<br><br>'
 		+'Click NEXT to learn about another way that babies can learn new words.'
         ],
@@ -84,9 +84,7 @@ var soc_test = {
 	type: 'image-test-2',
 	image1: "stims/12.png",
 	image2: "stims/10.png",
-	cue_image: "stims/eyes_down_left.jpeg",
-	cue_image_size: [172,200],
-	cue_image_pos_x: 350,
+	cue_image: "stims/eyes_down_left_tesser.jpeg",
 	question1: "Next, imagine that the person below said the word tesser.", 
 	question2: "Can you figure it out which of the two aliens they are talking about?",
 	question3: "Click on the tesser!",
@@ -102,7 +100,7 @@ var soc_instructions = {
 	size: 400,
 	pages: [
 		'If you guessed that the alien on the left is the tesser, you guessed right!'+"<br>"
-        +'Babies can use <b style="font-size:20px">'+"social cues" +'</b> -- e.g., where someone is looking -- to guess the meaning of new words.'
+        +'Babies can understand the meaning of new words by <b style="font-size:20px"> paying attention to people</b>, e.g., where someone is looking.'
 		+'<p style="text-align:center;"><img src="stims/soc_cues.jpeg" alt="social cues" width="70%"></p>'
 		+'Click NEXT to learn about another way that babies can learn new words.'
         ],
@@ -235,7 +233,7 @@ var stat_instructions_2 = {
 		'If you thought that the alien on the right is the guffi, you guessed right!'+"<br>"
 		+'<p style="text-align:center;"><img src="stims/stat_cues.jpeg" alt="social cues" width="70%"></p>'
 		+"The cone-shaped alien always appeared together with the word guffi - so it's a pretty good guess that guffi is the name of this alien. "
-        +'Babies also track these kinds of <b style="font-size:20px">'+"statistical cues" +'</b> to figure out what new words mean.'
+        +'Babies also track these kinds of  patterns to figure out what new words mean: they are great at <b style="font-size:20px">'+"'statistical learnnig' - keeping track of things that go together" +'</b>.'
 		+'<br><br>'
 		+'Click NEXT for a summary of what you learned!'
         ],
@@ -253,9 +251,9 @@ var final_instructions = {
 	pages: [
 		'Great job! You learned three different strategies that help babies become word experts:'
 		+'<ol>'
-        +'<li><b style="font-size:20px">'+"mutual exclusivity" +'</b></li>'
-        +'<li><b style="font-size:20px">'+"social cues" +'</b></li>'
-        +'<li><b style="font-size:20px">'+"tracking statistics" +'</b></li>'
+        +'<li><b style="font-size:20px">'+"ruling out words you already know" +'</b></li>'
+        +'<li><b style="font-size:20px">'+"paying attention to people" +'</b></li>'
+        +'<li><b style="font-size:20px">'+"keeping track of things that go together" +'</b></li>'
 		+'</ol>'
         +'<center>Email us if you have any questions or would like to know more about how babies learn words:</center>'
 		+'<center>martincz@princeton.edu</center>'
