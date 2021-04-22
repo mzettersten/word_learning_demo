@@ -32,14 +32,14 @@ jsPsych.plugins['comprehension-test-2'] = (function() {
 
       var paper = Snap("#jspsych-test-canvas");
 	  
-	  var circle1 = paper.circle(125, 325, 90);
+	  var circle1 = paper.circle(175, 325, 90);
 	  circle1.attr({
 		  fill: "#FFD3D6",
 		  stroke: "#000",
 		  strokeWidth: 5
 	  });
 	  
-	  var circle2 = paper.circle(725, 325, 90);
+	  var circle2 = paper.circle(675, 325, 90);
 	  circle2.attr({
 		  fill: "#FFD3D6",
 		  stroke: "#000",
@@ -48,8 +48,8 @@ jsPsych.plugins['comprehension-test-2'] = (function() {
 
 	  
 	  var imageLocations = {
-		  pos1: [50, 250],
-		  pos2: [650, 250]
+		  pos1: [100, 250],
+		  pos2: [600, 250]
 	  };
 	  
 	  var image1 = paper.image(trial.image1, imageLocations["pos1"][0], imageLocations["pos1"][1], trial.image_size[0],trial.image_size[1]);
@@ -145,7 +145,7 @@ jsPsych.plugins['comprehension-test-2'] = (function() {
 		setTimeout(function(){
 			display_element.html('');
 			jsPsych.finishTrial(trial_data);
-		},500);
+		},timing_post_trial);
 		
       };
   };	  

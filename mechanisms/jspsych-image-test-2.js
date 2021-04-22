@@ -17,6 +17,8 @@ jsPsych.plugins['image-test-2'] = (function() {
       trial.image_size = trial.image_size || [150, 150];
 	  //trial.audio = trial.audio || "stims/bleep.wav";
 	  trial.cue_image = trial.cue_image;
+	  trial.cue_image_size = trial.cue_image_size || [250,188];
+	  trial.cue_image_pos_x=trial.cue_image_pos_x || 350;
 	  trial.question1 = trial.question1 || "Where's the guffy?";
 	  trial.question2 = trial.question2 || "";
 	  trial.question3 = trial.question3 || "";
@@ -63,7 +65,7 @@ jsPsych.plugins['image-test-2'] = (function() {
 	  var text = paper.text(425, 50, trial.question1);
 	  var text2 = paper.text(425, 75, trial.question2);
 	  var text3 = paper.text(425, 110, trial.question3);
-	  var cue_image = paper.image(trial.cue_image, 350, 125, trial.image_size[0],trial.image_size[1]);
+	  var cue_image = paper.image(trial.cue_image, trial.cue_image_pos_x, 125,  trial.cue_image_size[0], trial.cue_image_size[1]);
 	  text.attr({
 		  "text-anchor": "middle",
 		  editable: true
