@@ -145,7 +145,7 @@ jsPsych.plugins['comprehension-test-2'] = (function() {
 		setTimeout(function(){
 			display_element.html('');
 			jsPsych.finishTrial(trial_data);
-		},timing_post_trial);
+		},trial.timing_post_trial);
 		
       };
   };	  
