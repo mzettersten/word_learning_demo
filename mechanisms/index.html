@@ -151,30 +151,8 @@ show_clickable_nav: true
 
 trainingList.push(trial);
 
-var numTB = 2 // number of Training Blocks
-var possibleLocations = ["left","right"];
-// each block of 10 cross sit exposure trials that each show 3 different aliens, so each block has each alien exactly once
-// 3 blocks are set up in specifiedstim so that no aliens occurs on the same trial with any other alien more than once over exposure
-// 0, 9 and 21 are control stimuli that are only ever seen in cross sit trials, never in the production/comprehension/feedback trials
+// MUTUAL EXCLUSIVITY
 
-//define specific stimuli combinations, depending on condition
-if (condition=="high") {
-	var specifiedStim = [[0,1],[0,1],[0,1],[2,3],[2,3],[2,3],[4,5],[4,6],[4,7],[5,6],[5,7],[6,7]];
-} else if (condition=="low") {
-	var specifiedStim = [[0,1],[0,2],[0,3],[1,2],[1,4],[2,5],[3,6],[3,7],[4,5],[4,6],[5,7],[6,7]];
-} else if (condition=="medium") {
-	var specifiedStim = [[0,1],[0,1],[0,2],[2,3],[2,3],[1,3],[4,5],[4,6],[4,7],[5,6],[5,7],[6,7]];
-} else {
-	var specifiedStim = [[0,1],[0,1],[0,1],[2,3],[2,3],[2,3],[4,5],[4,6],[4,7],[5,6],[5,7],[6,7]];
-}
-
-var wordOrderDummy = [0,1];
-var specifiedStimShuffled = jsPsych.randomization.shuffle(specifiedStim); // shuffle this list
-var numTrialsCTB = 12; // nr of trials per Cross sit training block
-var trainingNum = 1; // counter for trialnr
-
-console.log(specifiedStim);
-console.log(specifiedStimShuffled);
 
 // SOCIAL CUE TRIALS
 
@@ -185,7 +163,9 @@ var soc_test = {
 	image1: "stims/12.png",
 	image2: "stims/10.png",
 	cue_image: "stims/eyes_down_left.jpeg",
-	question: "Can you figure it out which of the two aliens is a tesser? Click on the tesser!",
+	question1: "Next, imagine that the person below said the word tesser.", 
+	question2: "Can you figure it out which of the two aliens they are talking about?",
+	question3: "Click on the tesser!",
 	label: "tesser",
 	targetLocation: 0,
 	targetImage: "stims/12.png"
@@ -216,6 +196,7 @@ var prompt = {
 	location2: "right",
 	im1: "stims/2.png",
 	im2: "stims/3.png",
+	question: "Click on the START button to hear the alien names. Make sure your audio is turned on!",
 	choices: ['START']
 };
 		
@@ -242,6 +223,7 @@ var prompt = {
 	location2: "right",
 	im1: "stims/3.png",
 	im2: "stims/5.png",
+	question: "Click on the START button to hear the alien names. Make sure your audio is turned on!",
 	choices: ['START']
 };
 		
@@ -268,6 +250,7 @@ var prompt = {
 	location2: "right",
 	im1: "stims/3.png",
 	im2: "stims/7.png",
+	question: "Click on the START button to hear the alien names. Make sure your audio is turned on!",
 	choices: ['START']
 };
 		
@@ -309,10 +292,9 @@ var test = {
 	targetImage: "stims/3.png"
 };
 	
-testList.push(test_prompt);
-testList.push(test);
+var crossit_trials=trainingList.concat(testList);
 
-//var timeline=trainingList.concat(testList);
+var timeline=timeline.concat(crossit_trials);
 
 
 //debrief and code message

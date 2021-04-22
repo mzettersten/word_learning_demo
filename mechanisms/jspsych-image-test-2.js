@@ -17,7 +17,9 @@ jsPsych.plugins['image-test-2'] = (function() {
       trial.image_size = trial.image_size || [150, 150];
 	  //trial.audio = trial.audio || "stims/bleep.wav";
 	  trial.cue_image = trial.cue_image;
-	  trial.question = trial.question || "Where's the guffy?";
+	  trial.question1 = trial.question1 || "Where's the guffy?";
+	  trial.question2 = trial.question2 || "";
+	  trial.question3 = trial.question3 || "";
 	  trial.label = trial.label || "kita";
 	  trial.timing_post_trial = typeof trial.timing_post_trial == 'undefined' ? 500 : trial.timing_post_trial;
 	  
@@ -32,14 +34,14 @@ jsPsych.plugins['image-test-2'] = (function() {
 
       var paper = Snap("#jspsych-test-canvas");
 	  
-	  var circle1 = paper.circle(125, 325, 90);
+	  var circle1 = paper.circle(125, 400, 90);
 	  circle1.attr({
 		  fill: "#FFD3D6",
 		  stroke: "#000",
 		  strokeWidth: 5
 	  });
 	  
-	  var circle2 = paper.circle(725, 325, 90);
+	  var circle2 = paper.circle(725, 400, 90);
 	  circle2.attr({
 		  fill: "#FFD3D6",
 		  stroke: "#000",
@@ -48,8 +50,8 @@ jsPsych.plugins['image-test-2'] = (function() {
 
 	  
 	  var imageLocations = {
-		  pos1: [50, 250],
-		  pos2: [650, 250]
+		  pos1: [50, 325],
+		  pos2: [650, 325]
 	  };
 	  
 	  var image1 = paper.image(trial.image1, imageLocations["pos1"][0], imageLocations["pos1"][1], trial.image_size[0],trial.image_size[1]);
@@ -58,9 +60,19 @@ jsPsych.plugins['image-test-2'] = (function() {
 	  
 	  //add prompt text
 	  //display_element.append(trial.question + trial.label + "?");
-	  var text = paper.text(425, 50, trial.question);
-	  var cue_image = paper.image(trial.cue_image, 350, 100, trial.image_size[0],trial.image_size[1]);
+	  var text = paper.text(425, 50, trial.question1);
+	  var text2 = paper.text(425, 75, trial.question2);
+	  var text3 = paper.text(425, 110, trial.question3);
+	  var cue_image = paper.image(trial.cue_image, 350, 125, trial.image_size[0],trial.image_size[1]);
 	  text.attr({
+		  "text-anchor": "middle",
+		  editable: true
+	  });
+	  text2.attr({
+		  "text-anchor": "middle",
+		  editable: true
+	  });
+	  text3.attr({
 		  "text-anchor": "middle",
 		  editable: true,
 		  "font-weight": "bold"
