@@ -180,16 +180,6 @@ console.log(specifiedStimShuffled);
 
 var timeline=[];
 
-var soc_test_prompt = {
-	type: 'comprehension-test-prompt-2',
-	image1: "stims/12.png",
-	image2: "stims/10.png",
-	label: "tesser",
-	targetLocation: 0,
-	targetImage: "stims/12.png",
-	choices: ['START']
-};
-
 var soc_test = {
 	type: 'image-test-2',
 	image1: "stims/12.png",
@@ -200,9 +190,22 @@ var soc_test = {
 	targetLocation: 0,
 	targetImage: "stims/12.png"
 };
-	
-timeline.push(soc_test_prompt);
-timeline.push(test);
+
+timeline.push(soc_test);
+
+var soc_instructions = {
+	type: 'instructions',
+	size: 400,
+	pages: [
+		'If you guessed that the alien on the left is the tesser, you guessed right!'+"<br>"
+        +'Babies can use <b style="font-size:20px">'+"social cues" +'</b> like where someone is looking to guess the meaning of new words.'
+		+'<p style="text-align:center;"><img src="stims/soc_cues.jpeg" alt="social cues" width="85%"></p>'
+		+'Click next to learn about another way that babies can learn new words.'
+        ],
+	show_clickable_nav: true
+};
+
+timeline.push(soc_instructions);
 
 // CROSS_SITUATIONAL TRIALS
 trainingList=[];

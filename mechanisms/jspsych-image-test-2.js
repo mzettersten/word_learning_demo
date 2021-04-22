@@ -139,7 +139,7 @@ jsPsych.plugins['image-test-2'] = (function() {
 		setTimeout(function(){
 			display_element.html('');
 			jsPsych.finishTrial(trial_data);
-		},500);
+		},trial.timing_post_trial );
 		
       };
   };	  
